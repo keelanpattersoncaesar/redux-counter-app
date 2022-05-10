@@ -24,7 +24,7 @@ export function Counter() {
 
   return (
     <div>
-      <div className={styles.row}>
+      <div className={styles.column}>
         <button
           className={styles.button}
           aria-label="Decrement value"
@@ -41,7 +41,7 @@ export function Counter() {
           +
         </button>
       </div>
-      <div className={styles.row}>
+      <div className={styles.column}>
         <input
           className={styles.textbox}
           aria-label="Set increment amount"
