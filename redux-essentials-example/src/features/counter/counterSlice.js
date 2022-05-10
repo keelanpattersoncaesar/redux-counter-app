@@ -1,3 +1,5 @@
+// createAsyncThunk function, accepts redux action type string, callback function that returns a promise
+// createSlice allows use to safely mutate state, automatically generates action creators that corresponds to each case reducer function we provide
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
@@ -35,6 +37,13 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    incrementBy5: (state) => {
+      state.value += 5;
+    },
+    decrementBy5: (state) => {
+      state.value -= 5;
+    },
+
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action) => {
       state.value += action.payload;
@@ -54,7 +63,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, decrementBy5, incrementBy5 } = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
