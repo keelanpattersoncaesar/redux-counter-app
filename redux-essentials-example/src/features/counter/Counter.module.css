@@ -1,14 +1,17 @@
-.row {
+.column {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
-.row > button {
+.column > button {
   margin-left: 4px;
   margin-right: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.row:not(:last-child) {
+.column:not(:last-child) {
   margin-bottom: 16px;
 }
 
@@ -17,6 +20,7 @@
   padding-left: 16px;
   padding-right: 16px;
   margin-top: 2px;
+  margin-bottom: 10px;
   font-family: 'Courier New', Courier, monospace;
 }
 
