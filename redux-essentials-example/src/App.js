@@ -10,6 +10,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
+        <h1 className="text-3xl font-bold underline">
+      Hello world!
+        </h1>
           Edit <code>src/App.js</code> and HELLO ALPHA!!
         </p>
         <span>

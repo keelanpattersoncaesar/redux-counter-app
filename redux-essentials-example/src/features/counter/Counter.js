@@ -25,9 +25,9 @@ export function Counter() {
 
   return (
     <div>
-      <div className={styles.column}>
+      <div className="items-center">
         <button
-          className={styles.button}
+          className="flex flex-col items-center ..."
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
@@ -35,57 +35,57 @@ export function Counter() {
         </button>
         <span className={styles.value}>{count}</span>
         <button
-          className={styles.button}
+          className="flex flex-col items-center ..."
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
         >
           +
         </button>
       </div>
-      <div className={styles.column}>
+      <div className="flex flex-col items-center space-y-3">
         <input
-          className={styles.textbox}
+          className="w-20 border-solid border-2 border-sky-500 rounded-lg text-center ..."
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <button
-          className={styles.button}
+          className= "w-60 border-solid border-2 border-sky-500 rounded-lg ..."
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         >
           Add Amount
         </button>
         <button
-          className={styles.asyncButton}
+          className= "w-60 border-solid border-2 border-sky-500 rounded-lg ..."
           onClick={() => dispatch(incrementAsync(incrementValue))}
         >
           Add Async
         </button>
         <button
-          className={styles.button}
+          className= "w-60 border-solid border-2 border-sky-500 rounded-lg ..."
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         >
           Add If Odd
         </button>
         <button
-          className={styles.button}
+          className= "w-60 border-solid border-2 border-sky-500 rounded-lg flex flex-col items-center ..."
           onClick={() => dispatch(incrementIfEven(incrementValue))}
         >
           Add If Even
         </button>
         <button
-          className={styles.button}
+          className= "w-60 border-solid border-2 border-sky-500 flex flex-col items-center ..."
           onClick={() => dispatch(incrementBy5(incrementValue))}
         >
           Add 5
         </button>
         <button
-          className={styles.button}
+          className= "w-60 border-solid border-2 border-sky-500 rounded-lg flex flex-col items-center ..."
           onClick={() => dispatch(decrementBy5(incrementValue))}
         >
           Subtract 5
         </button>
-      </div>
+      </div> 
     </div>
   );
 }
