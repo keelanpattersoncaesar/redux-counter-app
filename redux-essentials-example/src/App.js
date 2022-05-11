@@ -1,58 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { CounterA } from './components/CounterA';
+import { CounterB } from './components/CounterB';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-        <h1 className="text-3xl font-bold underline">
-      Hello world!
-        </h1>
-          Edit <code>src/App.js</code> and HELLO ALPHA!!
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+      <header className="App-header bg-orange-200">
+        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
+        <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
+
+        </div>
+        <div className='flex w-full justify-around'>
+        <CounterA />
+        <CounterB />
+
+        </div>
       </header>
     </div>
   );
