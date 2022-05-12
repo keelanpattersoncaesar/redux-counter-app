@@ -23,23 +23,45 @@ export function CounterA() {
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('5');
 
-  // Where is Number coming from?
   const incrementValue = Number(incrementAmount) || 0;
 
   const addAmount = () => {
     dispatch(incrementByAmount(incrementValue))
   }
 
+  const addAsync = () => {
+    dispatch(incrementAsync(incrementValue))
+  }
+
+  const addIfOdd = () => {
+    dispatch(incrementIfOdd(incrementValue))
+  }
   
+  const addIfEven = () => {
+    dispatch(incrementIfEven(incrementValue))
+  }
+
+  const add5 = () => {
+    dispatch(incrementBy5(incrementValue))
+  }
+
+  const subtract5 = () => {
+    dispatch(decrementBy5(incrementValue))
+  }
 
   return (
-    <div className='bg-orange-300 rounded-lg '>
+    <div className="App">
+      <header className="App-header bg-orange-200">
+        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
+          <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
+        </div>
+    <div className='bg-orange-200 rounded-lg p-2'>
       <div className="items-center">
         <BsPlusCircle 
           className="mx-auto flex flex-col ..."
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
-        />
+          />
         <span className={styles.value}>{count}</span>
           <FiMinusCircle  
           aria-label="Decrement value"
@@ -53,14 +75,16 @@ export function CounterA() {
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
-        />
+          />
         <ButtonStyle text={"Add Amount"} click={addAmount} />
-        <ButtonStyle text={"Add Async"} onClick={() => dispatch(incrementAsync(incrementValue))} />
-        <ButtonStyle text={"Add If Odd"} onClick={() => dispatch(incrementIfOdd(incrementValue))} />
-        <ButtonStyle text={"Add If Even"} onClick={() => dispatch(incrementIfEven(incrementValue))} />
-        <ButtonStyle text={"Add 5"} onClick={() => dispatch(incrementBy5(incrementValue))} />
-        <ButtonStyle text={"Subtract 5"} onClick={() => dispatch(decrementBy5(incrementValue))} />
-      </div> 
+        <ButtonStyle text={"Add Async"} click={addAsync} />
+        <ButtonStyle text={"Add If Odd"} click={addIfOdd} />
+        <ButtonStyle text={"Add If Even"} click={addIfEven} />
+        <ButtonStyle text={"Add 5"} click={add5} />
+        <ButtonStyle text={"Subtract 5"} click={subtract5} />
+      </div>
+    </div> 
+      </header>
     </div>
   );
 }
