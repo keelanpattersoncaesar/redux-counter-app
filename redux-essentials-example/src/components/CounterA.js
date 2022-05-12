@@ -23,7 +23,6 @@ export function CounterA() {
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('5');
 
-  // Where is Number coming from?
   const incrementValue = Number(incrementAmount) || 0;
 
   const addAmount = () => {
