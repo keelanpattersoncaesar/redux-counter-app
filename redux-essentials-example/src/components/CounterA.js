@@ -30,10 +30,28 @@ export function CounterA() {
     dispatch(incrementByAmount(incrementValue))
   }
 
+  const addAsync = () => {
+    dispatch(incrementAsync(incrementValue))
+  }
+
+  const addIfOdd = () => {
+    dispatch(incrementIfOdd(incrementValue))
+  }
   
+  const addIfEven = () => {
+    dispatch(incrementIfEven(incrementValue))
+  }
+
+  const add5 = () => {
+    dispatch(incrementBy5(incrementValue))
+  }
+
+  const subtract5 = () => {
+    dispatch(decrementBy5(incrementValue))
+  }
 
   return (
-    <div className='bg-orange-300 rounded-lg '>
+    <div className='bg-orange-300 rounded-lg p-2'>
       <div className="items-center">
         <BsPlusCircle 
           className="mx-auto flex flex-col ..."
@@ -55,11 +73,11 @@ export function CounterA() {
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <ButtonStyle text={"Add Amount"} click={addAmount} />
-        <ButtonStyle text={"Add Async"} onClick={() => dispatch(incrementAsync(incrementValue))} />
-        <ButtonStyle text={"Add If Odd"} onClick={() => dispatch(incrementIfOdd(incrementValue))} />
-        <ButtonStyle text={"Add If Even"} onClick={() => dispatch(incrementIfEven(incrementValue))} />
-        <ButtonStyle text={"Add 5"} onClick={() => dispatch(incrementBy5(incrementValue))} />
-        <ButtonStyle text={"Subtract 5"} onClick={() => dispatch(decrementBy5(incrementValue))} />
+        <ButtonStyle text={"Add Async"} click={addAsync} />
+        <ButtonStyle text={"Add If Odd"} click={addIfOdd} />
+        <ButtonStyle text={"Add If Even"} click={addIfEven} />
+        <ButtonStyle text={"Add 5"} click={add5} />
+        <ButtonStyle text={"Subtract 5"} click={subtract5} />
       </div> 
     </div>
   );
