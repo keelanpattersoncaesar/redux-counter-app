@@ -50,13 +50,13 @@ export function CounterA() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header bg-orange-200">
+    <div className="App bg-transparent">
+      <header className="App-header bg-transparent">
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
         </div>
-    <div className='bg-orange-200 rounded-lg p-2'>
-      <div className="items-center">
+    <div className='bg-transparent rounded-lg p-2'>
+      <div className="items-center bg-transparent">
         <BsPlusCircle 
           className="mx-auto flex flex-col ..."
           aria-label="Increment value"

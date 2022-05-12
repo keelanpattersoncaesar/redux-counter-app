@@ -32,7 +32,7 @@ export function CounterB() {
 
   return (
     <div className="App">
-      <header className="App-header bg-red-200">
+      <header className="App-header bg-transparent">
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-red-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png" className="App-logo" alt="logo" />
         </div>
