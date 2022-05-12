@@ -15,6 +15,8 @@ import {
 } from '../features/counter/counterSlice';
 import ButtonStyle from './ButtonStyle'
 import styles from './Counter.module.css';
+import { FiMinusCircle } from 'react-icons/fi'
+import { BsPlusCircle } from 'react-icons/bs'
 
 export function CounterB() {
   const count = useSelector(selectCount);
@@ -29,23 +31,24 @@ export function CounterB() {
   }
 
   return (
+    <div className="App">
+      <header className="App-header bg-red-200">
+        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-red-400 rounded-full">
+          <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png" className="App-logo" alt="logo" />
+        </div>
     <div>
-      <div className="items-center">
-        <button
-          className="mx-auto flex flex-col	..."
+    <div className="items-center">
+        <BsPlusCircle 
+          className="mx-auto flex flex-col ..."
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
-        >
-          +
-        </button>
+          />
         <span className={styles.value}>{count}</span>
-        <button
-          className="mx-auto flex flex-col ..."
+          <FiMinusCircle  
           aria-label="Decrement value"
+          className="mx-auto flex flex-col ..." 
           onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
+          />
       </div>
       <div className="flex flex-col items-center space-y-3">
         <input
@@ -61,6 +64,8 @@ export function CounterB() {
         <ButtonStyle text={"Add 5"} onClick={() => dispatch(incrementBy5(incrementValue))} />
         <ButtonStyle text={"Subtract 5"} onClick={() => dispatch(decrementBy5(incrementValue))} />
       </div> 
+    </div>
+    </header>
     </div>
   );
 }

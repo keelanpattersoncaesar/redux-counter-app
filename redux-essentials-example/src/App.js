@@ -2,22 +2,26 @@ import React from 'react';
 import { CounterA } from './components/CounterA';
 import { CounterB } from './components/CounterB';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header bg-orange-200">
-        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
-        <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
-
-        </div>
-        <div className='flex w-full justify-around'>
+    <Router>
+      <div className='flex w-full justify-around'>
         <CounterA />
         <CounterB />
+      </div>
+      <Routes>
+        {/* <Route exact path="/" component={CounterA} /> */}
+        {/* <Route path="/" component={} /> */}
 
-        </div>
-      </header>
-    </div>
+      </Routes>
+    </Router>
   );
 }
 
