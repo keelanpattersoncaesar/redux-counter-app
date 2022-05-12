@@ -51,7 +51,7 @@ export function CounterA() {
   }
 
   return (
-    <div className='bg-orange-300 rounded-lg p-2'>
+    <div className='bg-orange-200 rounded-lg p-2'>
       <div className="items-center">
         <BsPlusCircle 
           className="mx-auto flex flex-col ..."
