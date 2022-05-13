@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import CounterView from './views/CounterView';
 import AboutView from './views/AboutView';
-import { ContactUs } from './views/ContactUs';
+import ContactUs from './views/ContactUs';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' element={<CounterView/>}/> 
-        <Route path='/about' element={<AboutView/>}/> 
-        <Route path='/contact' element={<ContactUs/>}/> 
+        <Route path='/' element={<CounterView />} />
+        <Route path='/about' element={<AboutView />} />
+        <Route path='/contact' element={<ContactUs />} />
       </Routes>
     </Router>
   );
