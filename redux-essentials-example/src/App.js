@@ -9,6 +9,7 @@ import {
 import CounterView from './views/CounterView';
 import AboutView from './views/AboutView';
 import ContactUs from './views/ContactUs';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/about' element={<AboutView />} />
         <Route path='/contact' element={<ContactUs />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

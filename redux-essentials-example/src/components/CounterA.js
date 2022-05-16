@@ -16,7 +16,7 @@ import {
 import ButtonStyle from './ButtonStyle'
 import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
-import { BsPlusCircle } from 'react-icons/bs'
+import { FiPlusCircle } from 'react-icons/fi'
 
 export function CounterA() {
   const count = useSelector(selectCount);
@@ -56,34 +56,38 @@ export function CounterA() {
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
         </div>
     <div className='bg-transparent rounded-lg p-2'>
-      <div className="items-center bg-transparent">
-        <BsPlusCircle 
-          className="mx-auto flex flex-col ..."
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-          />
-        <span className={styles.value}>{count}</span>
-          <FiMinusCircle  
-          aria-label="Decrement value"
-          className="mx-auto flex flex-col ..." 
-          onClick={() => dispatch(decrement())}
-          />
-      </div>
-      <div className="flex flex-col items-center space-y-3">
         <input
           className="w-20 border-solid border-2 border-orange-500 rounded-lg bg-orange-200 shadow-lg shadow-orange-500/50 text-center ..."
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
           />
+    <div className="flex flex-row items-center justify-center px-10">
+          <FiMinusCircle  
+          aria-label="Decrement value"
+          className="mx-10" 
+          onClick={() => dispatch(decrement())}
+          />
+        <span>{count}</span>
+        <FiPlusCircle
+          className="mx-10"
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+          />
+    </div>
+      <div className="flex flex-col items-center space-y-3">
         <ButtonStyle text={"Add Amount"} click={addAmount} />
         <ButtonStyle text={"Add Async"} click={addAsync} />
+      <div className="flex flex-row">
         <ButtonStyle text={"Add If Odd"} click={addIfOdd} />
         <ButtonStyle text={"Add If Even"} click={addIfEven} />
+      </div>
+      <div className="flex flex-row">
         <ButtonStyle text={"Add 5"} click={add5} />
         <ButtonStyle text={"Subtract 5"} click={subtract5} />
       </div>
     </div> 
+      </div>
       </header>
     </div>
   );

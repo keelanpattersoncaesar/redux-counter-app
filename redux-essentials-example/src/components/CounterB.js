@@ -16,7 +16,7 @@ import {
 import ButtonStyle from './ButtonStyle'
 import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
-import { BsPlusCircle } from 'react-icons/bs'
+import { FiPlusCircle } from 'react-icons/fi'
 
 export function CounterB() {
   const count = useSelector(selectCount);
@@ -36,27 +36,27 @@ export function CounterB() {
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-red-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png" className="App-logo" alt="logo" />
         </div>
-    <div>
-    <div className="items-center">
-        <BsPlusCircle 
-          className="mx-auto flex flex-col ..."
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-          />
-        <span className={styles.value}>{count}</span>
-          <FiMinusCircle  
-          aria-label="Decrement value"
-          className="mx-auto flex flex-col ..." 
-          onClick={() => dispatch(decrement())}
-          />
-      </div>
-      <div className="flex flex-col items-center space-y-3">
+    <div className="p-2">
         <input
-          className="w-20 border-solid border-2 border-orange-500 rounded-lg bg-orange-200 shadow-lg shadow-orange-500/50 text-center ..."
+          className="w-20 border-solid border-2 border-red-500 rounded-lg bg-red-200 shadow-lg shadow-red-500/50 text-center ..."
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
+    <div className="items-center flex flex-row">
+          <FiMinusCircle  
+          aria-label="Decrement value"
+          className="mx-auto ..." 
+          onClick={() => dispatch(decrement())}
+          />
+        <span className={styles.value}>{count}</span>
+        <FiPlusCircle 
+          className="mx-auto ..."
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+          />
+      </div>
+      <div className="flex flex-col items-center space-y-3">
         <ButtonStyle text={"Add Amount"} onClick={addAmount} />
         <ButtonStyle text={"Add Async"} onClick={() => dispatch(incrementAsync(incrementValue))} />
         <ButtonStyle text={"Add If Odd"} onClick={() => dispatch(incrementIfOdd(incrementValue))} />
