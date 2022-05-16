@@ -8,7 +8,8 @@ const ContactUs = () => {
   // console.log(jsonObject);
 
   return (
-    <div className='font-Roboto text-center bg-gradient-to-r from-orange-200 to-red-300'>
+    <div className='bg-gradient-to-r from-orange-200 to-red-300 min-h-screen'>
+    <div className='font-Roboto text-center'>
       <h1 className='text-7xl mb-10 '>Contact Us!</h1>
       <form className='flex flex-col items-center' onSubmit={handleSubmit(onSubmit)}>
           <input className='my-2 border 3 border-black rounded-sm h-6 w-60 shadow-sm'{...register("firstName", 
@@ -48,6 +49,7 @@ const ContactUs = () => {
         <p className='text-red-500'>{errors.phoneNumber?.message}</p>
         <input className='border 2 rounded-full border-red-400 w-20 h-8 bg-orange-300 border-solid shadow-lg' type="submit" />
       </form>
+    </div>
     </div>
 
   )
