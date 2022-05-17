@@ -4,7 +4,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
 const initialState = {
-  value: 5,
+  value: 1000,
   status: 'idle',
 };
 
@@ -22,7 +22,7 @@ export const incrementAsync = createAsyncThunk(
   }
 );
 
-export const counterSlice = createSlice({
+export const counterSliceB = createSlice({
   name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
@@ -63,7 +63,7 @@ export const counterSlice = createSlice({
   },
 });
 
-export const { increment, decrement, incrementByAmount, decrementBy5, incrementBy5 } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount, decrementBy5, incrementBy5 } = counterSliceB.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -86,4 +86,4 @@ export const incrementIfEven = (amount) => (dispatch, getState) => {
   }
 };
 
-export default counterSlice.reducer;
+export default counterSliceB.reducer;

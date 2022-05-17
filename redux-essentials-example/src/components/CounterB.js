@@ -77,7 +77,7 @@ export function CounterB() {
           />
     </div>
       <div className="flex flex-col items-center space-y-3">
-        <ButtonStyle text={"Add Amount"} click={addAmount} />
+        <ButtonStyle className='border-solid border-2 border-red-300' text={"Add Amount"} click={addAmount} />
         <ButtonStyle text={"Add Async"} click={addAsync} />
       <div className="flex flex-row space-x-4">
         <ButtonStyleSmall text={"Add If Odd"} click={addIfOdd} />

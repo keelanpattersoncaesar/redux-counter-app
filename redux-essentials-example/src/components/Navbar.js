@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
-    <nav className="bg-gradient-to-r from-orange-400 to-red-400 px-2 sm:px-4 py-2.5 rounded dark:bg-black-800">
+    <nav className="font-Roboto text-center bg-gradient-to-r from-orange-400 to-red-400 px-2 sm:px-4 py-2.5 rounded dark:bg-black-800">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a href="/" className="flex items-center">
           <img src="https://i.ibb.co/mXvc7Ym/basket-edited-edited-1.png" alt="fruitbasket" className='h-10 w-10' />
