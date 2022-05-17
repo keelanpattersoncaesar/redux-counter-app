@@ -14,6 +14,7 @@ import {
   selectCount,
 } from '../features/counter/counterSlice';
 import ButtonStyle from './ButtonStyle'
+import ButtonStyleSmall from './ButtonStyleSmall';
 import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
 import { FiPlusCircle } from 'react-icons/fi'
@@ -78,13 +79,13 @@ export function CounterA() {
       <div className="flex flex-col items-center space-y-3">
         <ButtonStyle text={"Add Amount"} click={addAmount} />
         <ButtonStyle text={"Add Async"} click={addAsync} />
-      <div className="flex flex-row">
-        <ButtonStyle text={"Add If Odd"} click={addIfOdd} />
-        <ButtonStyle text={"Add If Even"} click={addIfEven} />
+      <div className="flex flex-row space-x-4">
+        <ButtonStyleSmall text={"Add If Odd"} click={addIfOdd} />
+        <ButtonStyleSmall text={"Add If Even"} click={addIfEven} />
       </div>
-      <div className="flex flex-row">
-        <ButtonStyle text={"Add 5"} click={add5} />
-        <ButtonStyle text={"Subtract 5"} click={subtract5} />
+      <div className="flex flex-row space-x-4">
+        <ButtonStyleSmall text={"Add 5"} click={add5} />
+        <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
       </div>
     </div> 
       </div>
