@@ -14,6 +14,7 @@ import {
   selectCount,
 } from '../features/counter/counterSlice';
 import ButtonStyle from './ButtonStyle'
+import ButtonStyleSmall from './ButtonStyleSmall';
 import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
 import { FiPlusCircle } from 'react-icons/fi'
@@ -30,42 +31,66 @@ export function CounterB() {
     dispatch(incrementByAmount(incrementValue))
   }
 
+  const addAsync = () => {
+    dispatch(incrementAsync(incrementValue))
+  }
+
+  const addIfOdd = () => {
+    dispatch(incrementIfOdd(incrementValue))
+  }
+  
+  const addIfEven = () => {
+    dispatch(incrementIfEven(incrementValue))
+  }
+
+  const add5 = () => {
+    dispatch(incrementBy5(incrementValue))
+  }
+
+  const subtract5 = () => {
+    dispatch(decrementBy5(incrementValue))
+  }
+
   return (
-    <div className="App">
+    <div className="App bg-transparent">
       <header className="App-header bg-transparent">
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-red-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png" className="App-logo" alt="logo" />
         </div>
-    <div className="p-2">
+    <div className='bg-transparent rounded-lg p-2'>
         <input
           className="w-20 border-solid border-2 border-red-500 rounded-lg bg-red-200 shadow-lg shadow-red-500/50 text-center ..."
           aria-label="Set increment amount"
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
-        />
-    <div className="items-center flex flex-row">
+          />
+    <div className="flex flex-row items-center justify-center px-10">
           <FiMinusCircle  
           aria-label="Decrement value"
-          className="mx-auto ..." 
+          className="mx-10" 
           onClick={() => dispatch(decrement())}
           />
-        <span className={styles.value}>{count}</span>
-        <FiPlusCircle 
-          className="mx-auto ..."
+        <span>{count}</span>
+        <FiPlusCircle
+          className="mx-10"
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
           />
-      </div>
-      <div className="flex flex-col items-center space-y-3">
-        <ButtonStyle text={"Add Amount"} onClick={addAmount} />
-        <ButtonStyle text={"Add Async"} onClick={() => dispatch(incrementAsync(incrementValue))} />
-        <ButtonStyle text={"Add If Odd"} onClick={() => dispatch(incrementIfOdd(incrementValue))} />
-        <ButtonStyle text={"Add If Even"} onClick={() => dispatch(incrementIfEven(incrementValue))} />
-        <ButtonStyle text={"Add 5"} onClick={() => dispatch(incrementBy5(incrementValue))} />
-        <ButtonStyle text={"Subtract 5"} onClick={() => dispatch(decrementBy5(incrementValue))} />
-      </div> 
     </div>
-    </header>
+      <div className="flex flex-col items-center space-y-3">
+        <ButtonStyle text={"Add Amount"} click={addAmount} />
+        <ButtonStyle text={"Add Async"} click={addAsync} />
+      <div className="flex flex-row space-x-4">
+        <ButtonStyleSmall text={"Add If Odd"} click={addIfOdd} />
+        <ButtonStyleSmall text={"Add If Even"} click={addIfEven} />
+      </div>
+      <div className="flex flex-row space-x-4">
+        <ButtonStyleSmall text={"Add 5"} click={add5} />
+        <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
+      </div>
+    </div> 
+      </div>
+      </header>
     </div>
   );
 }
