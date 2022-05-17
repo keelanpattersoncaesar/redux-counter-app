@@ -12,17 +12,16 @@ import {
   incrementIfOdd,
   incrementIfEven,
   selectCount,
-} from '../features/counter/counterSlice';
+} from '../features/counter/counterSliceB';
 import ButtonStyle from './ButtonStyle'
 import ButtonStyleSmall from './ButtonStyleSmall';
-import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
 import { FiPlusCircle } from 'react-icons/fi'
 
 export function CounterB() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('0');
+  const [incrementAmount, setIncrementAmount] = useState('5');
 
   // Where is Number coming from?
   const incrementValue = Number(incrementAmount) || 0;
@@ -52,7 +51,7 @@ export function CounterB() {
   }
 
   return (
-    <div className="App bg-transparent">
+    <div className="App bg-red-200 border-2 shadow-xl m-5 rounded-xl">
       <header className="App-header bg-transparent">
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-red-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png" className="App-logo" alt="logo" />

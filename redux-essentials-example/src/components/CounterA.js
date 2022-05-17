@@ -51,7 +51,7 @@ export function CounterA() {
   }
 
   return (
-    <div className="App bg-transparent">
+    <div className="App bg-orange-200 border-2 shadow-xl m-5 rounded-xl">
       <header className="App-header bg-transparent">
         <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
