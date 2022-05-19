@@ -12,6 +12,7 @@ import {
   incrementIfOdd,
   incrementIfEven,
   selectCount,
+  addToA,
 } from '../features/counter/counterSliceB';
 import ButtonStyle from './ButtonStyle'
 import ButtonStyleSmall from './ButtonStyleSmall';
@@ -22,7 +23,7 @@ export function CounterB() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('0');
-
+   
   // Where is Number coming from?
   const incrementValue = Number(incrementAmount) || 0;
 
@@ -48,6 +49,10 @@ export function CounterB() {
 
   const subtract5 = () => {
     dispatch(decrementBy5(incrementValue))
+  }
+
+  const addAmountToA = () => {
+    dispatch(addToA(incrementValue))
   }
 
   return (
@@ -87,6 +92,7 @@ export function CounterB() {
         <ButtonStyleSmall text={"Add 5"} click={add5} />
         <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
       </div>
+      <ButtonStyle text={"Add Amount to A"} click={addAmountToA} />
     </div> 
       </div>
       </header>

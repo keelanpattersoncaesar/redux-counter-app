@@ -86,6 +86,7 @@ export function CounterA() {
         <ButtonStyleSmall text={"Add 5"} click={add5} />
         <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
       </div>
+      <ButtonStyle text={"Add Amount to B"} />
     </div> 
       </div>
       </header>
