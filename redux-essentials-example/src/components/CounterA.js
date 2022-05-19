@@ -12,6 +12,7 @@ import {
   incrementIfOdd,
   incrementIfEven,
   selectCount,
+  addToB,
 } from '../features/counter/counterSlice';
 import ButtonStyle from './ButtonStyle'
 import ButtonStyleSmall from './ButtonStyleSmall';
@@ -49,10 +50,14 @@ export function CounterA() {
     dispatch(decrementBy5(incrementValue))
   }
 
+  // const addAmountToB = () => {
+  //   dispatch(addToB(incrementValue))
+  // }
+
   return (
     <div className="App bg-orange-200 border-2 shadow-xl m-5 rounded-xl">
       <header className="App-header bg-transparent">
-        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
+        <div style={{height: 250, width: 250}} className="shadow-lg border-8 border-orange-400 rounded-full">
           <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
         </div>
     <div className='bg-transparent rounded-lg p-2'>
@@ -86,7 +91,7 @@ export function CounterA() {
         <ButtonStyleSmall text={"Add 5"} click={add5} />
         <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
       </div>
-      <ButtonStyle text={"Add Amount to B"} />
+      <ButtonStyle text={"Add Amount to B"}/>
     </div> 
       </div>
       </header>

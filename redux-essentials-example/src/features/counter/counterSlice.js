@@ -43,6 +43,9 @@ export const counterSlice = createSlice({
     decrementBy5: (state) => {
       state.value -= 5;
     },
+    //  addToB: (state) => {
+    //   state.value += 1;
+    // },
 
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action) => {
