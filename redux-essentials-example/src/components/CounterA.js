@@ -15,7 +15,6 @@ import {
 } from '../features/counter/counterSlice';
 import ButtonStyle from './ButtonStyle'
 import ButtonStyleSmall from './ButtonStyleSmall';
-import styles from './Counter.module.css';
 import { FiMinusCircle } from 'react-icons/fi'
 import { FiPlusCircle } from 'react-icons/fi'
 
