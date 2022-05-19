@@ -8,7 +8,7 @@ import {
   decrementBy5,
   incrementBy5,
   incrementByAmount,
-  incrementAsync,
+  incrementAsyncB,
   incrementIfOdd,
   incrementIfEven,
   selectCount,
@@ -21,7 +21,7 @@ import { FiPlusCircle } from 'react-icons/fi'
 export function CounterB() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('5');
+  const [incrementAmount, setIncrementAmount] = useState('0');
 
   // Where is Number coming from?
   const incrementValue = Number(incrementAmount) || 0;
@@ -31,7 +31,7 @@ export function CounterB() {
   }
 
   const addAsync = () => {
-    dispatch(incrementAsync(incrementValue))
+    dispatch(incrementAsyncB(incrementValue))
   }
 
   const addIfOdd = () => {
