@@ -23,7 +23,7 @@ export const incrementAsync = createAsyncThunk(
 );
 
 export const counterSliceB = createSlice({
-  name: 'counter',
+  name: 'counterB',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -68,7 +68,7 @@ export const { increment, decrement, incrementByAmount, decrementBy5, incrementB
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.value)`
-export const selectCount = (state) => state.counter.value;
+export const selectCount = (state) => state.counterB.value;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.
