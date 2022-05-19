@@ -21,7 +21,7 @@ import { FiPlusCircle } from 'react-icons/fi'
 export function CounterA() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('5');
+  const [incrementAmount, setIncrementAmount] = useState('0');
 
   const incrementValue = Number(incrementAmount) || 0;
 
