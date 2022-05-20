@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-//useSelector allows you to extract data from the redux store state
-//useDispatch is used to dispatch an action
 import { useSelector, useDispatch } from 'react-redux';
 import {
   decrement,
