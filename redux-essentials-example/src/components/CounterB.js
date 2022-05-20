@@ -3,24 +3,24 @@ import React, { useState } from 'react';
 //useDispatch is used to dispatch an action
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  decrement,
-  increment,
-  decrementBy5,
-  incrementBy5,
-  incrementByAmount,
+  decrementB,
+  incrementB,
+  decrementBy5B,
+  incrementBy5B,
+  incrementByAmountB,
   incrementAsyncB,
-  incrementIfOdd,
-  incrementIfEven,
-  selectCount,
-  addToA,
+  incrementIfOddB,
+  incrementIfEvenB,
+  selectCountB,
 } from '../features/counter/counterSliceB';
+import { incrementByAmountA } from '../features/counter/counterSlice';
 import ButtonStyleRed from './ButtonStyleRed'
 import ButtonStyleSmallRed from './ButtonStyleSmallRed';
 import { FiMinusCircle } from 'react-icons/fi'
 import { FiPlusCircle } from 'react-icons/fi'
 
 export function CounterB() {
-  const count = useSelector(selectCount);
+  const count = useSelector(selectCountB);
   const dispatch = useDispatch();
   const [incrementAmount, setIncrementAmount] = useState('0');
    
@@ -28,7 +28,7 @@ export function CounterB() {
   const incrementValue = Number(incrementAmount) || 0;
 
   const addAmount = () => {
-    dispatch(incrementByAmount(incrementValue))
+    dispatch(incrementByAmountB(incrementValue))
   }
 
   const addAsync = () => {
@@ -36,24 +36,24 @@ export function CounterB() {
   }
 
   const addIfOdd = () => {
-    dispatch(incrementIfOdd(incrementValue))
+    dispatch(incrementIfOddB(incrementValue))
   }
   
   const addIfEven = () => {
-    dispatch(incrementIfEven(incrementValue))
+    dispatch(incrementIfEvenB(incrementValue))
   }
 
   const add5 = () => {
-    dispatch(incrementBy5(incrementValue))
+    dispatch(incrementBy5B(incrementValue))
   }
 
   const subtract5 = () => {
-    dispatch(decrementBy5(incrementValue))
+    dispatch(decrementBy5B(incrementValue))
   }
 
-  // const addAmountToA = () => {
-  //   dispatch(addToA(incrementValue))
-  // }
+  const addAmountToA = () => {
+    dispatch(incrementByAmountA(incrementValue))
+  }
 
   return (
     <div className="App bg-red-200 border-2 shadow-xl m-5 rounded-xl">
@@ -72,13 +72,13 @@ export function CounterB() {
           <FiMinusCircle  
           aria-label="Decrement value"
           className="mx-10" 
-          onClick={() => dispatch(decrement())}
+          onClick={() => dispatch(decrementB())}
           />
         <span>{count}</span>
         <FiPlusCircle
           className="mx-10"
           aria-label="Increment value"
-          onClick={() => dispatch(increment())}
+          onClick={() => dispatch(incrementB())}
           />
     </div>
       <div className="flex flex-col items-center space-y-3">
@@ -92,7 +92,7 @@ export function CounterB() {
         <ButtonStyleSmallRed text={"Add 5"} click={add5} />
         <ButtonStyleSmallRed text={"Subtract 5"} click={subtract5} />
       </div>
-      <ButtonStyleRed text={"Add Amount to A"} />
+      <ButtonStyleRed text={"Add Amount to A"} click={addAmountToA} />
     </div> 
       </div>
       </header>
