@@ -7,13 +7,13 @@ import {
   increment,
   decrementBy5,
   incrementBy5,
-  incrementByAmount,
+  incrementByAmountA,
   incrementAsync,
   incrementIfOdd,
   incrementIfEven,
   selectCount,
-  addToB,
 } from '../features/counter/counterSlice';
+import { incrementByAmountB } from '../features/counter/counterSliceB';
 import ButtonStyle from './ButtonStyle'
 import ButtonStyleSmall from './ButtonStyleSmall';
 import { FiMinusCircle } from 'react-icons/fi'
@@ -27,7 +27,7 @@ export function CounterA() {
   const incrementValue = Number(incrementAmount) || 0;
 
   const addAmount = () => {
-    dispatch(incrementByAmount(incrementValue))
+    dispatch(incrementByAmountA(incrementValue))
   }
 
   const addAsync = () => {
@@ -50,9 +50,9 @@ export function CounterA() {
     dispatch(decrementBy5(incrementValue))
   }
 
-  // const addAmountToB = () => {
-  //   dispatch(addToB(incrementValue))
-  // }
+  const addAmountToB = () => {
+    dispatch(incrementByAmountB(incrementValue))
+  }
 
   return (
     <div className="App bg-orange-200 border-2 shadow-xl m-5 rounded-xl">
@@ -91,7 +91,7 @@ export function CounterA() {
         <ButtonStyleSmall text={"Add 5"} click={add5} />
         <ButtonStyleSmall text={"Subtract 5"} click={subtract5} />
       </div>
-      <ButtonStyle text={"Add Amount to B"}/>
+      <ButtonStyle text={"Add Amount to B"} click={addAmountToB}/>
     </div> 
       </div>
       </header>
