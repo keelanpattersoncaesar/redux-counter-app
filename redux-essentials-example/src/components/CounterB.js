@@ -19,6 +19,7 @@ import ButtonStyleRed from "./ButtonStyleRed";
 import ButtonStyleSmallRed from "./ButtonStyleSmallRed";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
+import FreshCherry from "../assets/freshcherry2.png";
 
 export function CounterB() {
   const countB = useSelector(selectCountB);
@@ -65,8 +66,8 @@ export function CounterB() {
           className="shadow-lg border-8 border-red-400 rounded-full"
         >
           <img
-            style={{ height: "100%", width: "100%" }}
-            src="https://i.ibb.co/YLjLRmC/cherry-logo-template-icon-vector-26980752-edited-edited.png"
+            style={{ height: "90%", width: "90%" }}
+            src={FreshCherry}
             className="App-logo"
             alt="logo"
           />
