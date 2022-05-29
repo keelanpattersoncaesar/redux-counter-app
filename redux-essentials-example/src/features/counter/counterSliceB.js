@@ -1,12 +1,11 @@
 // createAsyncThunk function, accepts redux action type string, callback function that returns a promise
 // createSlice allows use to safely mutate state, automatically generates action creators that corresponds to each case reducer function we provide
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCountB } from './counterAPIB';
-import counterSlice from './counterSlice';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchCountB } from "./counterAPIB";
 
 const initialState = {
   value: 0,
-  status: 'idle',
+  status: "idle",
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -15,7 +14,7 @@ const initialState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const incrementAsyncB = createAsyncThunk(
-  'counterB/fetchCountB',
+  "counterB/fetchCountB",
   async (amount) => {
     const response = await fetchCountB(amount);
     // The value we return becomes the `fulfilled` action payload
@@ -24,7 +23,7 @@ export const incrementAsyncB = createAsyncThunk(
 );
 
 export const counterSliceB = createSlice({
-  name: 'counterB',
+  name: "counterB",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -43,7 +42,7 @@ export const counterSliceB = createSlice({
     },
     decrementBy5B: (state) => {
       state.value -= 5;
-    },   
+    },
 
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmountB: (state, action) => {
@@ -55,17 +54,22 @@ export const counterSliceB = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsyncB.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(incrementAsyncB.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.status = "idle";
         state.value += action.payload;
       });
   },
 });
 
-export const { incrementB, decrementB, incrementByAmountB, decrementBy5B, incrementBy5B} = counterSliceB.actions;
-
+export const {
+  incrementB,
+  decrementB,
+  incrementByAmountB,
+  decrementBy5B,
+  incrementBy5B,
+} = counterSliceB.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

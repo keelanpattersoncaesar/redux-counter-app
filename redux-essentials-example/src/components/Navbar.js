@@ -1,5 +1,4 @@
 import React from 'react'
-import { GiFruitBowl } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 const NavBar = () => {
@@ -18,13 +17,13 @@ const NavBar = () => {
         <div className="hidden w-full md:block md:w-auto" id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
-              <Link to="/" className="block py-2 pr-4 pl-3 bg-blue-700 rounded md:bg-transparent md:p-0 text-white" aria-current="home">Home</Link>
+              <Link to="/" className="block py-2 pr-4 pl-3 bg-blue-700 rounded md:bg-transparent md:p-0 text-white" aria-current="page">Home</Link>
             </li>
             <li>
-              <Link to='/about' className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0" aria-current="newpage">About</Link>
+              <Link to='/about' className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0" aria-current="page">About</Link>
             </li>
             <li>
-              <Link to='/contact' className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0" aria-current="newpage">Contact Us</Link>
+              <Link to='/contact' className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0" aria-current="page">Contact Us</Link>
             </li>
           </ul>
         </div>
