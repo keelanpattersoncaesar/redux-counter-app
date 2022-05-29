@@ -1,78 +1,46 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 
 const ContactUs = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => alert(JSON.stringify(data));
-
   return (
-    <div className="bg-gradient-to-r from-orange-200 to-red-300 min-h-screen">
+    <div className="bg-gradient-to-r from-orange-200 to-red-300 min-h-screen flex justify-center">
       <div className="font-Roboto text-center">
-        <h1 className="text-7xl mb-10 ">Contact Us!</h1>
+        <h1 className="text-7xl mb-2 ">Contact Me!</h1>
         <form
-          className="flex flex-col items-center"
-          onSubmit={handleSubmit(onSubmit)}
+          method="POST"
+          action="https://getform.io/f/27bfbd4b-3839-4380-8be8-8456579dacc4"
+          className="flex flex-col max-w-[600px] w-full"
         >
+          <div className="pb-8">
+            <p className="py-4">
+              Use this form or email me: keelanpattersoncaesar@gmail.com
+            </p>
+          </div>
           <input
-            className="my-2 border 3 border-black rounded-sm h-6 w-60 shadow-sm"
-            {...register("firstName", {
-              required: "This is required.",
-              minLength: {
-                value: 2,
-                message: "Must have at least 2 characters",
-              },
-            })}
-            placeholder="First Name"
+            className="p-2"
+            type="text"
+            placeholder="Name"
+            name="name"
+            required
           />
-          <p className="text-red-500">{errors.firstName?.message}</p>
           <input
-            className="border 2 my-3 border-black rounded-sm  h-6 w-60"
-            {...register("lastName", {
-              required: "This is required.",
-              minLength: {
-                value: 2,
-                message: "Must have at least 2 characters",
-              },
-            })}
-            placeholder="Last Name"
-          />
-          <p className="text-red-500">{errors.lastName?.message}</p>
-          <input
-            className="border 2 my-3 border-black rounded-sm  h-6 w-60"
-            {...register("email", {
-              required: "This is required.",
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: "Must be a valid email address",
-              },
-            })}
+            className="my-4 p-2"
+            type="email"
             placeholder="Email"
+            name="email"
+            required
           />
-          <p className="text-red-500">{errors.email?.message}</p>
-          <input
-            className="border 2 my-3 border-black rounded-sm h-6 w-60"
-            {...register("phoneNumber", {
-              required: "This is required.",
-              minLength: {
-                value: 10,
-                message: "Must have at least 10 characters",
-              },
-              maxLength: {
-                value: 10,
-                message: "Must be less than 10 characters",
-              },
-            })}
-            placeholder="Phone Number"
-          />
-          <p className="text-red-500">{errors.phoneNumber?.message}</p>
-          <input
-            className="border 2 rounded-full border-red-400 w-20 h-8 bg-orange-300 border-solid shadow-lg"
-            type="submit"
-          />
+          <textarea
+            className="p-2"
+            name="message"
+            rows="10"
+            placeholder="Message"
+            minLength="50"
+            maxLength="1000"
+            required
+          ></textarea>
+          <button className="text-white border-2 bg-[#E76F51] hover:border-[#E76F51] hover:text-black hover:bg-[#EE9882] px-4 py-3 my-8 mx-auto flex items-center">
+            Connect with me!
+          </button>
         </form>
       </div>
     </div>

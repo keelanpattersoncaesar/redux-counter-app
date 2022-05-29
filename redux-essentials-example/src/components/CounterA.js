@@ -19,6 +19,7 @@ import ButtonStyle from "./ButtonStyle";
 import ButtonStyleSmall from "./ButtonStyleSmall";
 import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
+import FreshOrange from "../assets/freshorange.png";
 
 export function CounterA() {
   const countA = useSelector(selectCountA);
@@ -65,7 +66,7 @@ export function CounterA() {
         >
           <img
             style={{ height: "100%", width: "100%" }}
-            src="https://i.ibb.co/yyv9frT/fruit.png"
+            src={FreshOrange}
             className="App-logo"
             alt="logo"
           />
