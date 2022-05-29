@@ -1,11 +1,11 @@
 // createAsyncThunk function, accepts redux action type string, callback function that returns a promise
 // createSlice allows use to safely mutate state, automatically generates action creators that corresponds to each case reducer function we provide
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './counterAPI';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { fetchCount } from "./counterAPI";
 
 const initialState = {
   value: 0,
-  status: 'idle',
+  status: "idle",
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -14,7 +14,7 @@ const initialState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
+  "counter/fetchCount",
   async (amount) => {
     const response = await fetchCount(amount);
     // The value we return becomes the `fulfilled` action payload
@@ -23,7 +23,7 @@ export const incrementAsync = createAsyncThunk(
 );
 
 export const counterSlice = createSlice({
-  name: 'counterA',
+  name: "counterA",
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -54,16 +54,22 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
+        state.status = "idle";
         state.value += action.payload;
       });
   },
 });
 
-export const { increment, decrement, incrementByAmountA, decrementBy5, incrementBy5 } = counterSlice.actions;
+export const {
+  increment,
+  decrement,
+  incrementByAmountA,
+  decrementBy5,
+  incrementBy5,
+} = counterSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
