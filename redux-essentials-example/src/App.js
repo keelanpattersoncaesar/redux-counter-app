@@ -1,23 +1,28 @@
 import React from 'react';
-import { CounterA } from './components/CounterA';
-import { CounterB } from './components/CounterB';
+import Navbar from './components/Navbar'
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom'
+import CounterView from './views/CounterView';
+import AboutView from './views/AboutView';
+import ContactUs from './views/ContactUs';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header bg-orange-200">
-        <div style={{height: 250, width: 250}} className="shadow-lg border-2 border-orange-400 rounded-full">
-        <img style={{height: "100%", width:"100%"}} src="https://i.ibb.co/yyv9frT/fruit.png" className="App-logo" alt="logo" />
-
-        </div>
-        <div className='flex w-full justify-around'>
-        <CounterA />
-        <CounterB />
-
-        </div>
-      </header>
-    </div>
+    //Router allows you to navigate through different routes
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<CounterView />} />
+        <Route path='/about' element={<AboutView />} />
+        <Route path='/contact' element={<ContactUs />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 

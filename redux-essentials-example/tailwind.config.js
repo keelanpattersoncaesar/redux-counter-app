@@ -1,7 +1,12 @@
+const { GiSverdIFjell } = require("react-icons/gi");
+
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
-  },
-  plugins: [],
+    extend: {
+      fontFamily: {
+        Roboto: ['Roboto', 'san-serif']
+      }
+    },
+  }
 }
