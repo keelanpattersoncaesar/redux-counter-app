@@ -12,7 +12,7 @@ const Contact = () => {
         >
           <div className="pb-8">
             <p className="py-4">
-              Use this form or email me: keelanpattersoncaesar@gmail.com
+              Use this form or email me at keelanpattersoncaesar@gmail.com
             </p>
           </div>
           <input
