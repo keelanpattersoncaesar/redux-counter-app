@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import CounterView from './views/CounterView';
 import AboutView from './views/AboutView';
-import ContactUs from './views/ContactUs';
+import Contact from './views/Contact';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<CounterView />} />
         <Route path='/about' element={<AboutView />} />
-        <Route path='/contact' element={<ContactUs />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </Router>
